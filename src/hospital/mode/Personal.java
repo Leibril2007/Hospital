@@ -1,4 +1,4 @@
-package personalMedico;
+package hospital.mode;
 
 public class Personal {
 

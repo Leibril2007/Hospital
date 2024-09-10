@@ -1,6 +1,6 @@
-package DATA;
+package hospital.services;
 
-import enfermeras.Enfermeras;
+import hospital.mode.Enfermeras;
 
 import java.util.ArrayList;
 

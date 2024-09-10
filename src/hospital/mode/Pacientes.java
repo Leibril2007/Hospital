@@ -1,4 +1,4 @@
-package pacientes;
+package hospital.mode;
 
 import javax.swing.*;
 import java.awt.*;

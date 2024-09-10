@@ -1,4 +1,4 @@
-package enfermeras;
+package hospital.mode;
 
 import javax.swing.*;
 import java.awt.*;
