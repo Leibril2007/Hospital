@@ -1,7 +1,4 @@
-package personalMedico;
-
-import enfermeras.Enfermeras;
-import pacientes.Pacientes;
+package hospital.mode;
 
 import javax.swing.*;
 import java.awt.*;

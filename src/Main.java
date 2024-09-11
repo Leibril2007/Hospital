@@ -1,8 +1,9 @@
+import hospital.view.LoginView;
 
 public class Main{ // esta clase es una ventana
     public static void main(String[] args) {
 
-        Login login = new Login();
+        LoginView login = new LoginView();
 
     }
 }

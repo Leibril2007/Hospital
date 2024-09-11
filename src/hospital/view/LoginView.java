@@ -1,13 +1,15 @@
-import personalMedico.DoctorGeneral;
-import DATA.bdDoctores;
+package hospital.view;
+
+import hospital.mode.DoctorGeneral;
+import hospital.services.bdDoctores;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Login extends JFrame {
+public class LoginView extends JFrame {
 
-    public Login(){
+    public LoginView(){
 
         // CONFIGURACIONES DE LA VENTANA
         this.setTitle("Login");
@@ -41,7 +43,7 @@ public class Login extends JFrame {
         int height = getHeight();
 
         // Redimensionar la imagen
-        ImageIcon originalIcon = new ImageIcon(getClass().getResource("img/logoHospital.png"));
+        ImageIcon originalIcon = new ImageIcon(getClass().getResource("resources/logoHospital.png"));
         Image image = originalIcon.getImage();
         Image scaledImage = image.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 
