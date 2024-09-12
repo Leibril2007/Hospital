@@ -2,11 +2,17 @@ package hospital.view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.border.Border;
 
 
 
 public class LoginView extends JFrame {
+
+    // OBJETOS GLOBALES
+    private JTextField emailInput;
+    private JPasswordField passwordInput;
+    private JButton botonLogin;
 
     public LoginView(){
 
@@ -34,7 +40,7 @@ public class LoginView extends JFrame {
         restricciones.insets = new Insets(0,10,30,0);
         panelMain.add(emailText, restricciones);
 
-        JTextField emailInput = new JTextField();
+        emailInput = new JTextField();
         emailInput.setPreferredSize(new Dimension(300, 30));
         emailInput.setFont(null);
         emailInput.setFont(new Font("Liberation Sans",Font.PLAIN,20));
@@ -59,7 +65,7 @@ public class LoginView extends JFrame {
         restricciones.insets = new Insets(0,10,30,50);
         panelMain.add(passwordText, restricciones);
 
-        JTextField passwordInput = new JTextField();
+        passwordInput = new JPasswordField();
         passwordInput.setPreferredSize(new Dimension(300, 30));
         passwordInput.setFont(null);
         passwordInput.setFont(new Font("arial",Font.PLAIN,20));
@@ -74,7 +80,7 @@ public class LoginView extends JFrame {
         panelMain.add(passwordInput, restricciones);
 
         //BOTON
-        JButton botonLogin = new JButton("Iniciar sesión");
+        botonLogin = new JButton("Iniciar sesión");
         botonLogin.setPreferredSize(new Dimension(300, 40));
         botonLogin.setFont(new Font("Liberation Sans", Font.CENTER_BASELINE, 21));
         botonLogin.setBackground(Color.lightGray);
@@ -85,11 +91,19 @@ public class LoginView extends JFrame {
         restricciones.insets = new Insets(0,50,0,0);
         panelMain.add(botonLogin, restricciones);
 
-
         this.add(panelMain);
         this.setVisible(true);
 
     }
 
+    public String getEmail(){
+        return emailInput.getText();
+    }
+    public String getPassword(){
+        return new String(passwordInput.getPassword());
+    }
 
+    public void addLoginListener(ActionListener listener){
+        botonLogin.addActionListener(listener);
+    }
 }
