@@ -1,21 +1,36 @@
 package backEnde;
 
+import hospital.mode.DoctorGeneral;
+import hospital.services.bdDoctores;
+import hospital.view.LoginView;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BackEnde {
 
-    public static String validarDatos(String user, String pass){
+   public static String validarDatos(String user, String password){
 
-        HashMap<String, String> mensajeValidacion = new HashMap<>();
-        mensajeValidacion.put("Error", "Mensaje");
+//       System.out.println("XX"+user);
+//       System.out.println("ZXX"+password);
 
-        if (user.equalsIgnoreCase(user)){
-            if (pass.equalsIgnoreCase(pass)){
-                System.out.print(mensajeValidacion.get("Mensaje"));
-            }
-        } else {
-            System.out.print(mensajeValidacion.get("Error"));
-        }
+
+       ArrayList<DoctorGeneral> doctores = bdDoctores.listaDoctores();
+
+       for (DoctorGeneral infoDoc : doctores){
+
+           if (infoDoc.getEmail().equalsIgnoreCase(user)){
+
+//               System.out.println("HOLA");
+
+               HashMap<String, String> datosDoctor = new HashMap<>();
+               datosDoctor.put(user, infoDoc.getPasswordD());
+               System.out.println("DOCTOR "+datosDoctor);
+           } else {
+//               System.out.println("Usuario no existe");
+           }
+
+       }
 
         return user;
     }

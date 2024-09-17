@@ -12,17 +12,18 @@ public class DoctorGeneral extends JFrame {
     private int numeroLcencia;
     private String password;
     private String email;
+    private String usuario;
 
 
 //    public JLabel
-    public DoctorGeneral( String nombre, String apellido,String especialidad, int numeroLcencia, String password, String email){
+    public DoctorGeneral( String nombre, String apellido,String especialidad, int numeroLcencia, String password, String email, String usuario){
         this.nombre = nombre;
         this.apellido = apellido;
         this.especialidad = especialidad;
         this.numeroLcencia = numeroLcencia;
         this.email = email;
         this.password = password;
-
+        this.usuario = usuario;
     }
 
     public static void ventanaDoctor() {
@@ -341,6 +342,10 @@ public class DoctorGeneral extends JFrame {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getUsuario() {
+        return usuario;
     }
 
     //SETTERS
