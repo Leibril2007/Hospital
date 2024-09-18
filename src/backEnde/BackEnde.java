@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class BackEnde {
 
-   public static String validarDatos(String user, String password){
+   public static HashMap<String, String> validarDatos(String user, String password){
 
        ArrayList<DoctorGeneral> doctores = bdDoctores.listaDoctores();
 
@@ -18,17 +18,20 @@ public class BackEnde {
                if (infoDoc.getPasswordD().equalsIgnoreCase(password)){
 
                    HashMap<String, String> datosDoctor = new HashMap<>();
-                   datosDoctor.put(user, infoDoc.getPasswordD());
-                   System.out.println("DOCTOR "+datosDoctor);
+//                   datosDoctor.put(user, infoDoc.getPasswordD());
+                   datosDoctor.put("user", "Aaron Almendro");
+                   System.out.println(datosDoctor.get("user"));
+                   return datosDoctor;
                }
-           } else {
-//               HashMap<String, String> datosDoctor = new HashMap<>();
-//               datosDoctor.put("Error", "Mensaje");
-//               System.out.println(datosDoctor+"Revise password o email");
            }
-
        }
-        return user;
+
+       HashMap<String, String> datosDoctor = new HashMap<>();
+       datosDoctor.put("Error", "Mensaje");
+       System.out.println(datosDoctor.get("Error"));
+
+       return datosDoctor;
     }
+
 
 }

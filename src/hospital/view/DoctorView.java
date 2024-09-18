@@ -1,15 +1,21 @@
 package hospital.view;
 
+import backEnde.BackEnde;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.HashMap;
 
 public class DoctorView extends JFrame {
 
     private int[] pantalla = {1300,800};
 
+    //ATRIBUTOS
+    private HashMap<String, String> datosDoctor;
 
-    public DoctorView(){
+    public DoctorView(HashMap datosDoctor){
+        this.datosDoctor = datosDoctor;
 
         //----------- -----------VENTANA--------------------
         this.setSize(pantalla[0], pantalla[1]);
@@ -49,7 +55,7 @@ public class DoctorView extends JFrame {
 
         // NOMBRE DOCTOR
 
-        JLabel nombreDoc = new JLabel("Aaron Almendro");
+        JLabel nombreDoc = new JLabel(String.valueOf(datosDoctor.get("user")));
         nombreDoc.setFont(new Font("Liberation Sans", Font.BOLD, 15));
         nombreDoc.setForeground(Color.white);
 
