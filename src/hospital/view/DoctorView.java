@@ -79,10 +79,4 @@ public class DoctorView extends JFrame {
         this.setVisible(true);
 
     }
-
-    public static void main(String[] args) {
-        DoctorView doc = new DoctorView();
-    }
-
-
 }
