@@ -1,5 +1,6 @@
 package hospital.controller;
 
+import backEnde.BackEnde;
 import hospital.view.LoginView;
 
 public class LoginController {
@@ -14,7 +15,10 @@ public class LoginController {
     }
 
     public void controlDeLogin(){
-        System.out.println("Hola login");
+
+        String validar = BackEnde.validarDatos(loginView.getEmail(), loginView.getPassword());;
+
+//        System.out.println(validar);
     }
 
 }
