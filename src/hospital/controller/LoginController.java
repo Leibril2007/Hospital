@@ -18,7 +18,6 @@ public class LoginController {
 
         String validar = BackEnde.validarDatos(loginView.getEmail(), loginView.getPassword());;
 
-//        System.out.println(validar);
     }
 
 }
