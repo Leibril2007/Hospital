@@ -5,33 +5,38 @@ import hospital.services.bdDoctores;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class BackEnde {
 
-   public static HashMap<String, String> validarDatos(String user, String password){
+    public static HashMap<String, String> validarDatos(String user, String password){
 
-       ArrayList<DoctorGeneral> doctores = bdDoctores.listaDoctores();
+        ArrayList<DoctorGeneral> doctores = bdDoctores.listaDoctores();
 
-       for (DoctorGeneral infoDoc : doctores){
+        for (DoctorGeneral infoDoc : doctores){
 
-           if (infoDoc.getEmail().equalsIgnoreCase(user)){
-               if (infoDoc.getPasswordD().equalsIgnoreCase(password)){
+            if (infoDoc.getEmail().equalsIgnoreCase(user)){
+                if (infoDoc.getPasswordD().equalsIgnoreCase(password)){
 
-                   HashMap<String, String> datosDoctor = new HashMap<>();
-//                   datosDoctor.put(user, infoDoc.getPasswordD());
-                   datosDoctor.put("user", "Aaron Almendro");
-                   System.out.println(datosDoctor.get("user"));
-                   return datosDoctor;
-               }
-           }
-       }
+                    HashMap<String, String> datosDoctor = new HashMap<>();
+                    datosDoctor.put("nombre doctor", infoDoc.getNombre());
+                    datosDoctor.put("apellido doctor", infoDoc.getApellido());
+                    datosDoctor.put("especialidad", infoDoc.getEspecialidad());
+                    datosDoctor.put("password", infoDoc.getPasswordD());
+                    datosDoctor.put("email", infoDoc.getEmail());
+                    datosDoctor.put("usuario", infoDoc.getUsuario());
 
-       HashMap<String, String> datosDoctor = new HashMap<>();
-       datosDoctor.put("Error", "Mensaje");
-       System.out.println(datosDoctor.get("Error"));
+                    System.out.println(datosDoctor.entrySet());
+                    return datosDoctor;
+                }
+            }
+        }
 
-       return datosDoctor;
+        HashMap<String, String> datosDoctor = new HashMap<>();
+        datosDoctor.put("Error", "¡¡ERROR!! Verifique usuario o contraseña");
+        System.out.println(datosDoctor.get("Error"));
+
+        return datosDoctor;
     }
-
 
 }

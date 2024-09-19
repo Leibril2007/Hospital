@@ -55,7 +55,7 @@ public class DoctorView extends JFrame {
 
         // NOMBRE DOCTOR
 
-        JLabel nombreDoc = new JLabel(String.valueOf(datosDoctor.get("user")));
+        JLabel nombreDoc = new JLabel(String.valueOf(datosDoctor.get("nombre doctor")));
         nombreDoc.setFont(new Font("Liberation Sans", Font.BOLD, 15));
         nombreDoc.setForeground(Color.white);
 
@@ -67,7 +67,7 @@ public class DoctorView extends JFrame {
 
         // ESPECIALIDAD
 
-        JLabel especialidadDoc = new JLabel("Doctor General");
+        JLabel especialidadDoc = new JLabel(String.valueOf(datosDoctor.get("especialidad")));
         especialidadDoc.setFont(new Font("Liberation Sans", Font.PLAIN, 13));
         especialidadDoc.setForeground(Color.white);
 
