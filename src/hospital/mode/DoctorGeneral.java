@@ -328,6 +328,10 @@ public class DoctorGeneral extends JFrame {
         return this.nombre;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
     public String getEspecialidad() {
         return especialidad;
     }

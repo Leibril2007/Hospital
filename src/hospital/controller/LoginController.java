@@ -3,6 +3,8 @@ package hospital.controller;
 import backEnde.BackEnde;
 import hospital.view.LoginView;
 
+import java.util.HashMap;
+
 public class LoginController {
 
     //CREA UN OBJETO
@@ -16,7 +18,7 @@ public class LoginController {
 
     public void controlDeLogin(){
 
-        String validar = BackEnde.validarDatos(loginView.getEmail(), loginView.getPassword());;
+        HashMap validar = BackEnde.validarDatos(loginView.getEmail(), loginView.getPassword());
 
     }
 
