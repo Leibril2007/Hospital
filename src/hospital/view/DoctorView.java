@@ -1,15 +1,21 @@
 package hospital.view;
 
+import backEnde.BackEnde;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.HashMap;
 
 public class DoctorView extends JFrame {
 
     private int[] pantalla = {1300,800};
 
+    //ATRIBUTOS
+    private HashMap<String, String> datosDoctor;
 
-    public DoctorView(){
+    public DoctorView(HashMap datosDoctor){
+        this.datosDoctor = datosDoctor;
 
         //----------- -----------VENTANA--------------------
         this.setSize(pantalla[0], pantalla[1]);
@@ -49,7 +55,7 @@ public class DoctorView extends JFrame {
 
         // NOMBRE DOCTOR
 
-        JLabel nombreDoc = new JLabel("Aaron Almendro");
+        JLabel nombreDoc = new JLabel(String.valueOf(datosDoctor.get("nombre doctor")));
         nombreDoc.setFont(new Font("Liberation Sans", Font.BOLD, 15));
         nombreDoc.setForeground(Color.white);
 
@@ -61,7 +67,7 @@ public class DoctorView extends JFrame {
 
         // ESPECIALIDAD
 
-        JLabel especialidadDoc = new JLabel("Doctor General");
+        JLabel especialidadDoc = new JLabel(String.valueOf(datosDoctor.get("especialidad")));
         especialidadDoc.setFont(new Font("Liberation Sans", Font.PLAIN, 13));
         especialidadDoc.setForeground(Color.white);
 
@@ -76,7 +82,44 @@ public class DoctorView extends JFrame {
         headerPanel.add(userPanel, BorderLayout.EAST);
         headerPanel.add(nombreHospital, BorderLayout.WEST);
         this.add(headerPanel, BorderLayout.NORTH);
+        this.add(componenteMenuLateral(), BorderLayout.WEST);
         this.setVisible(true);
 
+    }
+
+    private JPanel componenteMenuLateral(){
+
+        // PANEL BASE DEL MENU
+        JPanel panelMenu = new JPanel();
+        panelMenu.setPreferredSize(new Dimension(250, pantalla[1]));
+        panelMenu.setBackground(Color.darkGray);
+
+        // MENU
+        JPanel menu = new JPanel(new GridBagLayout());
+
+        GridBagConstraints restricciones = new GridBagConstraints();
+        restricciones.fill = GridBagConstraints.HORIZONTAL;
+        restricciones.gridx = 0;
+
+        //BOTONES
+
+        menu.add(crearUnBoton("Opción 1"), restricciones);
+        menu.add(crearUnBoton("Opción 2"), restricciones);
+        menu.add(crearUnBoton("Opción 3"), restricciones);
+        menu.add(crearUnBoton("Opción 4"), restricciones);
+        menu.add(crearUnBoton("Opción 5"), restricciones);
+
+        panelMenu.add(menu);
+        return panelMenu;
+    }
+
+    private JButton crearUnBoton(String texto){
+        JButton boton = new JButton(texto);
+
+        boton.addActionListener(e -> {
+            System.out.println(texto);
+        });
+
+        return boton;
     }
 }
