@@ -1,15 +1,19 @@
 package hospital.view;
 
 import backEnde.BackEnde;
+import hospital.mode.Paciente;
+import hospital.services.DataPaciente;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class DoctorView extends JFrame {
 
     private int[] pantalla = {1300,800};
+    private ArrayList<Paciente> pacienteList = DataPaciente.listaPacientes();
 
     //ATRIBUTOS
     private HashMap<String, String> datosDoctor;
@@ -83,9 +87,11 @@ public class DoctorView extends JFrame {
         headerPanel.add(nombreHospital, BorderLayout.WEST);
         this.add(headerPanel, BorderLayout.NORTH);
         this.add(componenteMenuLateral(), BorderLayout.WEST);
+        this.add(PacienteView.panelPaciente(pacienteList));
         this.setVisible(true);
 
     }
+
 
     private JPanel componenteMenuLateral(){
 
