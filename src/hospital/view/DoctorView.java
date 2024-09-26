@@ -1,6 +1,5 @@
 package hospital.view;
 
-import backEnde.BackEnde;
 import hospital.mode.Paciente;
 import hospital.services.DataPaciente;
 

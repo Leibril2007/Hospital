@@ -14,6 +14,7 @@ public class LoginController {
     //Recibe como parametro una interfaz grafica
     public LoginController(LoginView loginView){
         this.loginView = loginView;
+
         this.loginView.addLoginListener(e -> iniciarSesion());
     }
 
@@ -22,6 +23,7 @@ public class LoginController {
         HashMap validar = BackEnde.validarDatos(loginView.getEmail(), loginView.getPassword());
 
         DoctorView doctorView = new DoctorView(validar);
+        loginView.dispose();
     }
 
 }

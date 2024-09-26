@@ -4,6 +4,7 @@ import hospital.mode.Paciente;
 import hospital.services.DataPaciente;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -18,18 +19,21 @@ public class PacienteView {
     public static JPanel panelPaciente(ArrayList<Paciente> paciente){
 
         JPanel pacientesPanel = new JPanel();
-        pacientesPanel.setLayout(new GridLayout(21, 4));
+        pacientesPanel.setLayout(new GridLayout(25, 3));
+        pacientesPanel.setBorder(new EmptyBorder(10,30,0,10));
+        pacientesPanel.setBackground(Color.WHITE);
 
-        JLabel titPaciente = new JLabel("Listado de pacientes");
-        titPaciente.setFont(new Font("Liberation Sans", Font.BOLD, 20));
+        JLabel [] campos = {new JLabel("Listado de pacientes"), new JLabel(), new JLabel(), new JLabel()};
+        campos[0].setFont(new Font("Nimbus Sans", Font.BOLD, 22));
 
-        pacientesPanel.add(titPaciente);
+        for (JLabel campo : campos) {
+            pacientesPanel.add(campo);
+        }
 
-        String [] campos = {"NOMBRE","FECHA_NACIMIENTO","HORARIO_CITA","VISITA",};
+        String [] campos2 = {"NOMBRE","FECHA_NACIMIENTO","HORARIO_CITA","VISITA"};
 
-
-        for (String campo : campos) {
-            pacientesPanel.add(new JLabel(campo));
+        for (String campo2 : campos2) {
+            pacientesPanel.add(new JLabel(campo2));
         }
 
         ArrayList<Paciente> listaPacientes = DataPaciente.listaPacientes();
@@ -41,10 +45,8 @@ public class PacienteView {
             pacientesPanel.add(new JLabel(infoPaciente.getMotivoVisita()));
         }
 
-
         return pacientesPanel;
     }
-
 
 
 }

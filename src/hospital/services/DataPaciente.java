@@ -1,6 +1,5 @@
 package hospital.services;
 
-import hospital.mode.Enfermeras;
 import hospital.mode.Paciente;
 
 import java.util.ArrayList;
