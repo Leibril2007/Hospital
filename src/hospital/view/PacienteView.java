@@ -43,6 +43,7 @@ public class PacienteView {
             pacientesPanel.add(new JLabel(infoPaciente.getFechaNacimiento()));
             pacientesPanel.add(new JLabel(infoPaciente.getHorarioCita()));
             pacientesPanel.add(new JLabel(infoPaciente.getMotivoVisita()));
+            System.out.println(infoPaciente.getNombre());
         }
 
         return pacientesPanel;
