@@ -15,7 +15,7 @@ public class BackEnde {
 
         for (DoctorGeneral infoDoc : doctores){
 
-            if (infoDoc.getEmail().equalsIgnoreCase(user)){
+            if (infoDoc.getEmail().equalsIgnoreCase(user) || infoDoc.getUsuario().equalsIgnoreCase(user)){
                 if (infoDoc.getPasswordD().equalsIgnoreCase(password)){
 
                     HashMap<String, String> datosDoctor = new HashMap<>();
@@ -35,7 +35,7 @@ public class BackEnde {
         HashMap<String, String> datosDoctor = new HashMap<>();
         datosDoctor.put("Error", "¡¡ERROR!! Verifique usuario o contraseña");
         System.out.println(datosDoctor.get("Error"));
-
+        
         return datosDoctor;
     }
 

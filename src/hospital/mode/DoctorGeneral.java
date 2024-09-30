@@ -271,7 +271,7 @@ public class DoctorGeneral extends JFrame {
 
         // Accion del boton
         btnIngPacientes.addActionListener(e -> {
-            Pacientes pacientes = new Pacientes();
+//            Paciente pacientes = new Paciente();
         });
 
         btnIngEnfermeras.addActionListener(e -> {
