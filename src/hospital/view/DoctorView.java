@@ -107,7 +107,6 @@ public class DoctorView extends JFrame {
         restricciones.gridx = 0;
 
         //BOTONES
-
         menu.add(crearUnBoton("Consultas Del Día"), restricciones);
         menu.add(crearUnBoton("Salas"), restricciones);
         menu.add(crearUnBoton("Farmacia"), restricciones);
@@ -122,7 +121,12 @@ public class DoctorView extends JFrame {
         JButton boton = new JButton(texto);
 
         boton.addActionListener(e -> {
-            System.out.println(texto);
+
+            if (texto.equals("Salas")){
+                this.add(SalasView.panelSala("hola", "hola"));
+                this.setVisible(true);
+            }
+
         });
 
         return boton;
