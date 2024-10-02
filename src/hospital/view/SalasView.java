@@ -20,7 +20,7 @@ public class SalasView {
     private List<String> estados = Arrays.asList("En uso", "Fuera de servicio", "Disponible");
 
 
-    public static JPanel panelSala(String Nombre, String estado){
+    public static JPanel panelSala(String Nombre, String estados){
 
         JPanel basePanel = new JPanel();
         basePanel.setLayout(new GridBagLayout());

@@ -122,8 +122,11 @@ public class DoctorView extends JFrame {
 
         boton.addActionListener(e -> {
 
-            if (texto.equals("Salas")){
-                this.add(SalasView.panelSala("hola", "hola"));
+            if (texto.equals("Consultas Del Día")){
+                this.add(PacienteView.panelPaciente(pacienteList));
+                this.setVisible(true);
+            } else if (texto.equals("Salas")) {
+                this.add(SalasView.panelSala("Dr. Almendro", "En uso"));
                 this.setVisible(true);
             }
 
