@@ -1,6 +1,8 @@
 package hospital.view;
 
+import hospital.mode.Medicamento;
 import hospital.mode.Paciente;
+import hospital.services.DataFarmacia;
 import hospital.services.DataPaciente;
 
 import javax.swing.*;
@@ -13,6 +15,7 @@ public class DoctorView extends JFrame {
 
     private int[] pantalla = {1300,800};
     private ArrayList<Paciente> pacienteList = DataPaciente.listaPacientes();
+    private ArrayList<Medicamento> medicamentosList = DataFarmacia.listaFarmacia();
 
     //ATRIBUTOS
     private HashMap<String, String> datosDoctor;
@@ -127,6 +130,9 @@ public class DoctorView extends JFrame {
                 this.setVisible(true);
             } else if (texto.equals("Salas")) {
                 this.add(SalasView.panelSala("Dr. Almendro", "En uso"));
+                this.setVisible(true);
+            } else if (texto.equals("Farmacia")) {
+                this.add(MedicamentoView.panelMedicamento(medicamentosList));
                 this.setVisible(true);
             }
 
