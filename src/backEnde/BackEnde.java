@@ -3,9 +3,9 @@ package backEnde;
 import hospital.mode.DoctorGeneral;
 import hospital.services.bdDoctores;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class BackEnde {
 
@@ -29,13 +29,17 @@ public class BackEnde {
                     System.out.println(datosDoctor.entrySet());
                     return datosDoctor;
                 }
+            }else {
+                HashMap<String, String> datosDoctor = new HashMap<>();
+                datosDoctor.put("Error", "¡¡ERROR!! Verifique usuario o contraseña");
+                return null;
             }
         }
 
         HashMap<String, String> datosDoctor = new HashMap<>();
         datosDoctor.put("Error", "¡¡ERROR!! Verifique usuario o contraseña");
         System.out.println(datosDoctor.get("Error"));
-        
+
         return datosDoctor;
     }
 
