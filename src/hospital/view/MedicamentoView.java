@@ -22,7 +22,7 @@ public class MedicamentoView {
         medicinaPanel.setBorder(new EmptyBorder(0,30,0,10));
 
         JLabel [] campos = {new JLabel("Farmacia"), new JLabel(), new JLabel(), new JLabel()};
-        campos[0].setFont(new Font("Nimbus Sans", Font.BOLD, 22));
+        campos[0].setFont(new Font("Nimbus Sans", Font.BOLD, 21));
 
 
         for (JLabel campo : campos) {
